@@ -1,0 +1,16 @@
+.boutonCat{
+    text-align: center;
+    margin-top: 10px;
+}
+.menu{
+    position: fixed;
+    margin-top: 20px;
+    padding: 10px;
+}
+.title{
+    margin-top: 20px;
+}
+.List_ProductTrue{
+    width: 130%;
+    margin-left: -25%;
+}
