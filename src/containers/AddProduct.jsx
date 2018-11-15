@@ -10,6 +10,8 @@ import EasyTransition from 'react-easy-transition';
 import './AddProduct.css'
 import Formulaire from '../components/Formulaire';
 
+const url = 'http://localhost:3003/api/list/';
+
 class AddProduct extends Component {
     constructor(props) {
         super(props);
@@ -54,13 +56,18 @@ class AddProduct extends Component {
     }
 
     sendState() {
-        this.props.addList({
+       
+        let data = {
             name: this.state.name,
             category: this.state.category,
             next_course: this.state.next_course,
             quantite: this.state.quantite,
             prix: this.state.prix,
-        });
+        }
+       
+        
+        this.props.addList(data);
+        
         this.setState({
             name: "",
             next_course: false,
@@ -90,7 +97,7 @@ class AddProduct extends Component {
 
     render() {
         return (
-            <div className={this.props.displayCat ? "AddProductTrue" :"AddProductFalse"} onKeyPress={this.key}>
+            <div className={this.props.displayCat ? "AddProductTrue" : "AddProductFalse"} onKeyPress={this.key}>
                 <Row>
                     <Col>
                         <Formulaire

@@ -116,7 +116,7 @@ class AffichageCard extends Component {
                         </Row>
                         <div className='ligne'> </div>
                         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                            <ModalHeader toggle={this.toggle}>{element.name}</ModalHeader>
+                            <ModalHeader toggle={this.toggle}>{this.state.name}</ModalHeader>
                             <ModalBody>
                                 <Formulaire
                                     name={this.state.name}
