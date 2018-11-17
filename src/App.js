@@ -1,22 +1,59 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom'
-import Home from "./components/Home";
-import MakeShopping from './components/MakeShopping';
-import EndCommand from './containers/EndCommand';
+import AddProduct from "./containers/AddProduct";
+import ListProduct from "./containers/List_Product";
+import { Container, Row, Col } from 'reactstrap';
 
 import './App.css';
 
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayCat: false,
+    }
+    this.ecout = this.ecout.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      displayCat: false,
+    })
+  }
+
+  componentDidUpdate() {
+    window.addEventListener('scroll', this.ecout);
+  }
+
+  ecout(e) {
+    if (e.pageY > 60) {
+      this.setState({
+        displayCat: true,
+      })
+    } else {
+      this.setState({
+        displayCat: false,
+      })
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route  path="/achat" component={MakeShopping} />
-          <Route  path="/commande" component={EndCommand} />
-        </Switch>
+        <Container>
+          <h1 className='titreCentrer'>Créer votre liste de course</h1>
+          <Row>
+            <Col sm='6'>
+              <AddProduct
+                displayCat={this.state.displayCat} />
+            </Col>
+            <Col sm='6'>
+              <ListProduct
+                displayCat={this.state.displayCat} />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

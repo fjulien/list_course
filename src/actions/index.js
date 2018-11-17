@@ -27,10 +27,6 @@ export const remove_quantite = (produit) => ({
     type: 'REMOVE_QUANTITE',
     produit
 })
-export const finalisation = (produits) => ({
-    type: 'FINALISATION',
-    produits
-})
 
 export const edit = (produit) => ({
     type: 'EDIT',
