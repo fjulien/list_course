@@ -2,8 +2,25 @@
 
 Link for watch this [Project](https://fjulien.github.io/list_course/ "Project")
 
-## For the devs, you must install :
- - npm => npm instal
- 
-###### Make by ME
+## Installation
+
+### Front initialization 
+
+- 1 . Go to the folder.
+
+- 2 . Npm dependencies installation :
+
+`$ npm install`
+
+- 3 . Start the front project :
+
+`$ npm start`
+
+- 4 . And to finish, in your navigator,  go to *http://localhost:3000/*  to see the web project.
+
+## Team 
+
+- Fettinger Julien
+
+
 
